@@ -1,9 +1,9 @@
 ﻿using System;
-using Libraries.WebDriver;
-using Sentinel.EndToEnd.Model.Pages;
-using Sentinel.EndToEnd.PageModel.DataModel;
+using Sentinel.Test.EndToEnd.PageModel.DataModel;
+using Sentinel.Test.EndToEnd.PageModel.Pages;
+using Sentinel.Test.EndToEnd.WebDriver;
 
-namespace Sentinel.EndToEnd.PageModel
+namespace Sentinel.Test.EndToEnd.PageModel
 {
     public class TestData : IDisposable
     {

@@ -1,7 +1,7 @@
-﻿using Libraries.WebDriver;
-using Sentinel.EndToEnd.PageModel.DataModel;
+﻿using Sentinel.Test.EndToEnd.PageModel.DataModel;
+using Sentinel.Test.EndToEnd.WebDriver;
 
-namespace Sentinel.EndToEnd.PageModel.Pages
+namespace Sentinel.Test.EndToEnd.PageModel.Pages
 {
     public class ForgotPasswordPage
     {

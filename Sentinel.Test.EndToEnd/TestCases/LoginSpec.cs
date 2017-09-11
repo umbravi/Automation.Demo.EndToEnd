@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sentinel.EndToEnd.PageModel;
+using Sentinel.Test.EndToEnd.PageModel;
 
-
-namespace Sentinel.EndToEnd.TestCases
+namespace Sentinel.Test.EndToEnd.TestCases
 {
     [TestClass]
     public class LoginSpec
@@ -16,7 +15,7 @@ namespace Sentinel.EndToEnd.TestCases
         { }
 
         [TestMethod]
-        public void InvalidLogin()
+        public void Login()
         {
             using (var test = new TestData())
             {

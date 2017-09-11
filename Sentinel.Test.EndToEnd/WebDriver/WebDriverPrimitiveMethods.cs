@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Protractor;
 
-namespace Libraries.WebDriver
+namespace Sentinel.Test.EndToEnd.WebDriver
 {
     internal class WebDriverPrimitiveMethods
     {

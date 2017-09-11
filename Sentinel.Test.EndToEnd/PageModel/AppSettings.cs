@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace Sentinel.EndToEnd.PageModel
+namespace Sentinel.Test.EndToEnd.PageModel
 {
     internal static class AppSettings
     {

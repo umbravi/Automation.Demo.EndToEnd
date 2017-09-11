@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using Protractor;
 
-namespace Libraries.WebDriver
+namespace Sentinel.Test.EndToEnd.WebDriver
 {
     public class Interactions
     {

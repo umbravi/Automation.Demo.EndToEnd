@@ -5,7 +5,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using Protractor;
 
-namespace Libraries.WebDriver
+namespace Sentinel.Test.EndToEnd.WebDriver
 {
     public class WebDrivers
     {

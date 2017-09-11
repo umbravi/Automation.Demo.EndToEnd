@@ -1,4 +1,4 @@
-﻿namespace Sentinel.EndToEnd.PageModel.DataModel
+﻿namespace Sentinel.Test.EndToEnd.PageModel.DataModel
 {
     internal static class DataGenerator
     {
