@@ -1,7 +1,9 @@
 ﻿using System;
-using Sentinel.Test.EndToEnd.PageModel.DataModel;
+using Sentinel.Test.EndToEnd.PageModel.DataModel.TestDataFactory;
+using Sentinel.Test.EndToEnd.PageModel.DataModel.Types;
+using Sentinel.Test.EndToEnd.PageModel.Features;
 using Sentinel.Test.EndToEnd.PageModel.Pages;
-using Sentinel.Test.EndToEnd.WebDriver;
+using Sentinel.WebDriver;
 
 namespace Sentinel.Test.EndToEnd.PageModel
 {
@@ -10,21 +12,23 @@ namespace Sentinel.Test.EndToEnd.PageModel
         public User CurrentUser;
 
         public LoginPage Login;
+        public ForgotPasswordFeature ForgotPasswordFeature;
 
-        private WebDrivers _webDrivers;
+        private readonly BrowserDriver browserDriver;
 
         public TestData()
         {
-            this.CurrentUser = DataGenerator.GenerateUser();
+            CurrentUser = DataGenerator.GenerateUser();
 
-            this._webDrivers = new WebDrivers(AppSettings.TargetBrowser);
+            browserDriver = new BrowserDriver(AppSettings.TargetBrowser);
 
-            Login = new LoginPage(CurrentUser, _webDrivers.Interactions, AppSettings.UrlUnderTest);
+            Login = new LoginPage(CurrentUser, browserDriver, AppSettings.UrlUnderTest);
+            ForgotPasswordFeature = new ForgotPasswordFeature(CurrentUser, browserDriver);
         }
 
         public void Dispose()
         {
-            this._webDrivers.KillDrivers();
+            browserDriver.KillDrivers();
         }
     }
 }

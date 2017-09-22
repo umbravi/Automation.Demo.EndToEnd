@@ -14,6 +14,7 @@ namespace Sentinel.Test.EndToEnd.WebDriver
 
         internal Interactions Interactions;
 
+        //ToDo: Add Edge
         public WebDrivers(string webBrowserToOpen)
         {
             if (webBrowserToOpen.ToUpper() == "CHROME")
@@ -41,11 +42,11 @@ namespace Sentinel.Test.EndToEnd.WebDriver
                 throw new Exception($"Unknown or unlisted web browser: {webBrowserToOpen}");
             }
 
-            this.Protractor = new NgWebDriver(Selenium);
+            Protractor = new NgWebDriver(Selenium);
 
             Selenium.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
-            this.Interactions = new Interactions(new WebDriverPrimitiveMethods(Selenium, Protractor));
+            Interactions = new Interactions(new WebDriverPrimitiveMethods(Selenium, Protractor));
         }
 
         public void KillDrivers()

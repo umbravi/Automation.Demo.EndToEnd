@@ -1,11 +1,20 @@
-﻿using Sentinel.Test.EndToEnd.WebDriver;
+﻿using Sentinel.Test.EndToEnd.PageModel.DataModel.Types;
+using Sentinel.WebDriver;
 
 namespace Sentinel.Test.EndToEnd.PageModel.Pages
 {
     public class TermsOfUsePage
     {
-        private Interactions _interactions;
+        private User user;
 
-        private string MyUri = "Account/ForgotPassword";
+        private BrowserDriver driver;
+
+        private const string MY_URI = "Account/ForgotPassword";
+
+        public TermsOfUsePage(User user, BrowserDriver driver)
+        {
+            this.user = user;
+            this.driver = driver;
+        }
     }
 }

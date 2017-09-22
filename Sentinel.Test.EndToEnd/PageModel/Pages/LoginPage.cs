@@ -1,5 +1,5 @@
-﻿using Sentinel.Test.EndToEnd.PageModel.DataModel;
-using Sentinel.Test.EndToEnd.WebDriver;
+﻿using Sentinel.Test.EndToEnd.PageModel.DataModel.Types;
+using Sentinel.WebDriver;
 
 namespace Sentinel.Test.EndToEnd.PageModel.Pages
 {
@@ -7,57 +7,62 @@ namespace Sentinel.Test.EndToEnd.PageModel.Pages
     {
         internal User User;
 
-        private Interactions _interactions;
+        private readonly BrowserDriver driver;
 
-        private string UserNameFieldId = "Email";
-        private string PasswordFieldId = "Password";
-        private string LoginButtonText = "Login";
-        private string RegisterLinkText = "Register for Sentinel";
-        private string ForgotLinkText = "Forgot?";
-        private string TermsOfUseLinkText = "Terms of Use";
-        private string MyUri = "Account/Login";
-        private string UrlUnderTest;
+        private const string USER_NAME_FIELD_ID = "Username";
+        private const string PASSWORD_FIELD_ID = "Password";
+        private const string LOGIN_BUTTON_TEXT = "Login";
+        private const string REGISTER_LINK_TEXT = "Register for Sentinel";
+        private const string FORGOT_LINK_TEXT = "Forgot?";
+        private const string TERMS_OF_USE_LINK_TEXT = "Terms of Use";
+        private const string MY_URI = "Account/Login";
+        private readonly string urlUnderTest;
 
-        public LoginPage(User user, Interactions interactions, string urlUnderTest)
+        public LoginPage(User user, BrowserDriver driver, string urlUnderTest)
         {
-            this.User = user;
-            this._interactions = interactions;
-            this.UrlUnderTest = urlUnderTest;
+            User = user;
+            this.driver = driver;
+            this.urlUnderTest = urlUnderTest;
         }
 
         public void NavigateToMe()
         {
-            _interactions.NavigateToUrl(UrlUnderTest);
+            driver.Interactions.NavigateToUrl(urlUnderTest);
         }
 
         public void EnterUsername()
         {
-            _interactions.SendTextById(UserNameFieldId, User.Email);
+            driver.Interactions.SendTextById(USER_NAME_FIELD_ID, User.Username);
         }
 
         public void EnterPassword()
         {
-            _interactions.SendTextById(PasswordFieldId, User.Password);
+            driver.Interactions.SendTextById(PASSWORD_FIELD_ID, User.Password);
         }
 
         internal void ClickLoginButton()
         {
-            _interactions.ClickButtonByText(LoginButtonText);
+            driver.Interactions.ClickButtonByText(LOGIN_BUTTON_TEXT);
         }
 
         internal void OpenForgotPasswordPage()
         {
-            _interactions.ClickLinkByText(ForgotLinkText);
+            driver.Interactions.ClickLinkByText(FORGOT_LINK_TEXT);
         }
 
         internal void OpenTermsOfUsePage()
         {
-            _interactions.ClickLinkByText(TermsOfUseLinkText);
+            driver.Interactions.ClickLinkByText(TERMS_OF_USE_LINK_TEXT);
+        }
+
+        internal void OpenRegistrationPage()
+        {
+            driver.Interactions.ClickLinkByText(REGISTER_LINK_TEXT);
         }
 
         internal void ValidateOnTheCorrectPage()
         {
-            _interactions.ValidateUri(MyUri);
+            driver.Interactions.ValidateUri(MY_URI);
         }
     }
 }
