@@ -1,7 +1,7 @@
 ﻿using System;
 using Automation.Demo.PageModel.Features;
 using Automation.Demo.PageModel.Pages;
-using Sentinel.WebDriver;
+using Automation.Demo.WebDriver;
 
 namespace Automation.Demo.PageModel
 {

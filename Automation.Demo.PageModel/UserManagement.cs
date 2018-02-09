@@ -1,10 +1,10 @@
 ﻿using System;
 using Automation.Demo.DataModel;
-using Sentinel.TestTools.APIModel.Account.DataObjects;
-using Sentinel.TestTools.APIModel.Account.DataObjects.DataBuilders;
-using Sentinel.TestTools.APIModel.Account.DataObjects.ResourceModels;
-using Sentinel.TestTools.APIModel.Identity.DataObjects;
-using Sentinel.TestTools.APIModel.Identity.DataObjects.DataBuilders;
+using Automation.Demo.TestTools.APIModel.Account.DataObjects;
+using Automation.Demo.TestTools.APIModel.Account.DataObjects.DataBuilders;
+using Automation.Demo.TestTools.APIModel.Account.DataObjects.ResourceModels;
+using Automation.Demo.TestTools.APIModel.Identity.DataObjects;
+using Automation.Demo.TestTools.APIModel.Identity.DataObjects.DataBuilders;
 
 namespace Automation.Demo.PageModel
 {
@@ -12,13 +12,13 @@ namespace Automation.Demo.PageModel
     {
         private TestData testData;
         public UserData UserData;
-        private readonly Sentinel.TestTools.APIModel.TestData identityData;
+        private readonly Automation.Demo.TestTools.APIModel.TestData identityData;
 
         public UserManagement(TestData testData)
         {
             UserData = new UserData();
             this.testData = testData;
-            identityData = new Sentinel.TestTools.APIModel.TestData();
+            identityData = new Automation.Demo.TestTools.APIModel.TestData();
         }
 
         public void SetUser(UserData userData)

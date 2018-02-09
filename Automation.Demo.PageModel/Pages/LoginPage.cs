@@ -1,5 +1,5 @@
 ﻿using Automation.Demo.DataModel;
-using Sentinel.WebDriver;
+using Automation.Demo.WebDriver;
 
 namespace Automation.Demo.PageModel.Pages
 {
