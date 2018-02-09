@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sentinel.TestTools.APIModel" Version="1.0.2" />
+    <PackageReference Include="Sentinel.WebDriver" Version="1.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sentinel.Web.EndToEnd.DataModel\Sentinel.Web.EndToEnd.DataModel.csproj" />
+  </ItemGroup>
+
+</Project>

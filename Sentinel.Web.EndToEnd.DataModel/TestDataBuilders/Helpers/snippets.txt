@@ -1,0 +1,3 @@
+#Regex to convert model properties to build class methods
+
+public UserBuilder With$1()\n{\n\tuserBuilder.With(u => u.$1 = Faker.Name.First());\n\treturn this;\n}\n\npublic UserBuilder WithOut$1()\n{\n\t userBuilder.With(u => u.$1 = Faker.Name.First());\n\treturn this;\n}
